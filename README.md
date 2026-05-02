@@ -37,9 +37,11 @@
   - `00-qa-gate`: 최종 산출물 무결성 검증
 
 - **상세 설계 문서**:
-  - [PRD.md](./docs/PRD.md)
-  - [ARCHITECTURE.md](./docs/ARCHITECTURE.md)
-  - [RULES.md](./docs/RULES.md)
+  - [PRD.md](./docs/PRD.md): 제품 요구사항 명세서
+  - [ARCHITECTURE.md](./docs/ARCHITECTURE.md): 기술 구조 및 설계
+  - [ROADMAP.md](./docs/ROADMAP.md): 전체 개발 현황 및 단계
+  - [EXAMPLES.md](./docs/EXAMPLES.md): 실제 구축 사례 (투투앱)
+  - [RULES.md](./docs/RULES.md): 보안 및 품질 표준
 
 ---
 

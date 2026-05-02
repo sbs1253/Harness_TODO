@@ -1,107 +1,64 @@
-# 사용 예시 (EXAMPLES)
+# 🚀 프로젝트 사례 (EXAMPLES)
 
-> 실제 프로젝트에서 Harness Builder Team을 사용한 예시 모음입니다.
-
----
-
-## 예시 1: 커플 챌린지 앱 (투투, TwoToo)
-
-### 시나리오
-커플이 함께 22일간 챌린지를 수행하는 감성 앱 개발
-
-### 사용 흐름
-
-**Step 1**: `INTAKE_FORM.md` 작성
-```markdown
-- 핵심 목표: 커플이 함께 22일 챌린지를 수행하며 꽃을 키우는 앱
-- 기술 스택: React + Tailwind (Vite), 백엔드 없음 (LocalStorage)
-- 제약 조건: 모바일 반응형 필수
-```
-
-**Step 2**: PM 브리핑 결과
-```
-프로젝트: 투투(TwoToo) — 커플 챌린지 앱
-기술 스택: Vite + React 19 + Tailwind CSS v4 + Zustand
-추천 에이전트: 01-frontend-specialist, 02-logic-architect
-```
-
-**Step 3**: 1차 팀 구성 후 추천 MCP
-```
-| 도구 | 유형 | 효과 |
-|------|------|------|
-| context7 | MCP | React 19 / Tailwind v4 최신 문서 참조 |
-| sequential-thinking | MCP | 22일 챌린지 복잡 로직 설계 |
-```
-
-**Step 4**: "MCP 재검증" 후 강화된 팀
-- `01-frontend-specialist`: "context7로 Tailwind v4 최신 문서 참조" 추가
-- `02-logic-architect`: "sequential-thinking으로 챌린지 계산 로직 설계" 추가
-
-### 결과물
-- 타겟 에이전트 2개
-- 프로젝트 문서 5개 (PRD, ARCHITECTURE, ROADMAP, PLANNING, CHANGELOG)
-- `ONBOARDING.md` 생성
+> Harness Builder Team을 통해 실제로 구축된 프로젝트 사례입니다.
 
 ---
 
-## 예시 2: 쇼핑몰 (스택 모를 때)
+## 📱 사례: 투투앱 (TwoToo App)
 
-### 시나리오
-기술 스택을 모르는 사용자의 쇼핑몰 프로젝트
+**"심플하고 프리미엄한 감성 할 일 관리 서비스"**
 
-### INTAKE_FORM 작성
-```markdown
-- 핵심 목표: 의류 쇼핑몰, 관리자 페이지 포함
-- 기술 스택: 추천해줘
-- 외부 연동: 결제 필요
-```
+이 프로젝트는 Harness Builder Team의 전체 워크플로우를 거쳐 개발된 첫 번째 공식 데모 프로젝트입니다.
 
-### PM 추천 결과
-```
-🛒 쇼핑몰 전용 추천 스택:
-- Framework: Next.js 15 (App Router)
-  이유: SEO 최적화 + SSR로 상품 페이지 노출 유리
-- DB: Supabase
-  이유: 무료 PostgreSQL + RLS 내장 + 실시간 재고 업데이트
-- 결제: Toss Payments / 포트원
-  이유: 국내 최다 사용, 공식 Next.js 예제 제공
+### 1. 요구사항 정의 (`INTAKE_FORM.md`)
 
-추천 에이전트 팀:
-- 01-frontend-dev (상품 목록, 장바구니 UI)
-- 02-backend-dev (API 라우트, 비즈니스 로직)
-- 03-db-architect (Supabase 스키마, RLS 정책)
-- 04-payment-specialist (결제 연동)
+- **핵심 목표**: 개인이 사용하기 좋은 프리미엄 디자인의 할 일 관리 앱.
+- **디자인 철학**: Indigo/Purple 그라데이션, Glassmorphism, 부드러운 애니메이션.
+- **기술 제약**: 백엔드 없이 LocalStorage를 활용한 데이터 영속성 유지.
+
+### 2. 빌더 팀 브리핑 및 설계
+
+- **PM 분석**: React 19와 Tailwind CSS v4를 활용한 최신 스택 추천.
+- **문서 설계**: `docs/` 내에 PRD, ARCHITECTURE, ROADMAP 등 SSOT(Single Source of Truth) 체계 구축.
+- **전문가 배치**:
+  - `01-frontend-expert`: Framer Motion 및 Tailwind 기반 UI 구현 담당.
+  - `02-logic-specialist`: CRUD 로직 및 TypeScript 타입 안정성 담당.
+
+### 3. 실무 개발 과정
+
+- **UI 구현**:
+  - `framer-motion`의 `AnimatePresence`를 활용한 리스트 추가/삭제 애니메이션.
+  - 다크 모드(System preference + Manual toggle) 완벽 대응.
+- **로직 구현**:
+  - `useMemo`를 활용한 상태별 필터링 (전체, 진행 중, 완료).
+  - `useEffect`와 `localStorage`를 연동한 자동 저장 시스템.
+
+### 4. 결과물 하이라이트
+
+- **프리미엄 UI**: 투명도와 블러 효과를 활용한 Glassmorphism 카드 디자인.
+- **인터랙션**: 버튼 클릭 시 미세한 스케일 애니메이션 및 부드러운 다크 모드 전환.
+- **코드 품질**: TypeScript Strict 모드 적용 및 에이전트 간의 역할 분담을 통한 유지보수성 확보.
+
+### 5. 실행 방법 (Demo)
+
+```bash
+# 데모 폴더 이동
+cd demo
+
+# 의존성 설치 및 실행
+npm install
+npm run dev
 ```
 
 ---
 
-## 예시 3: 기획 변경 대응
+## 🛠️ 워크플로우 재현
 
-### 시나리오
-개발 중 "결제 기능 추가" 요청
+이 사례와 같은 프로젝트를 다시 시작하려면 아래와 같이 요청하세요:
 
-**입력**: `docs/PRD.md`에 결제 기능 추가 후 `"기획 변경 반영"` 입력
-
-**00-team-architect Mode C 출력**:
-```
-PRD 변경 사항 감지:
-- [신규] 결제 시스템 연동 기능 추가
-
-영향받는 에이전트:
-- 02-backend-dev: 결제 API 라우트 추가 필요
-- [신규] 04-payment-specialist 에이전트 생성 제안
-
-진행할까요? (예/아니오)
-```
+1. `INTAKE_FORM.md`에 새로운 아이디어 작성
+2. `"00-harness-pm 진행해"` 입력
+3. 설계 완료 후 `"00-team-architect 진행해"` 입력
 
 ---
-
-## 예시 4: 중간 재검증
-
-### 시나리오
-Phase 7 완료 후 에이전트 품질 재점검
-
-**입력**: `"재검증"` 또는 `"QA 재검증"`
-
-→ 00-qa-gate가 9개 항목 전수 재검사 수행
-→ 이전 결과와 무관하게 새로 검증
+> **Note**: 이 프로젝트의 모든 소스 코드는 `demo/` 디렉토리에서 확인할 수 있습니다.

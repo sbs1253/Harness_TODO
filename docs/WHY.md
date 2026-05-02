@@ -38,7 +38,7 @@ Harness Builder Team이 분석
 | 팀 구성 | 사용자가 매번 설명 | 자동 생성 |
 | 최신 문서 | 사전 학습 의존 | 실시간 웹 검색 필수 |
 | 보안 룰 | 빠뜨리기 쉬움 | 강제 주입 |
-| 품질 검증 | 없음 | 9개 항목 자동 검증 |
+| 품질 검증 | 없음 | 10개 항목 자동 검증 |
 | 기획 변경 | 다시 설명 | PRD 수정 → 팀 자동 업데이트 |
 
 ---
@@ -58,17 +58,19 @@ flowchart TD
     C -->|"PRD/ROADMAP"| D["00-team-architect<br/>1차 팀구성 + MCP추천"]
     
     D -->|"추천 목록"| E{"사용자: MCP 설치?"}
-    E -->|"예 (설치완료)"| F["00-team-architect<br/>★ 재검증 + 팀 개선"]
+    E -->|"예 (설치완료)"| F["00-team-architect<br/>★ 재검증 + 팀 강화"]
     E -->|"아니오 (바로진행)"| G["00-security-enforcer<br/>보안 룰 주입"]
     F -->|"강화된 팀"| G
     
     G -->|"보안 강화"| H["00-qa-gate<br/>최종 무결성 검증"]
     H -->|"❌ 반려"| D
     H -->|"✅ 통과"| I["ONBOARDING.md 생성<br/>🎉 환경 구축 완료"]
+    I --> J["빌더 팀 비활성화<br/>(서포트 모드 전환)"]
     
     style E fill:#f59e0b,color:#000,stroke:#d97706
     style F fill:#10b981,color:#fff,stroke:#059669
     style H fill:#6366f1,color:#fff,stroke:#4f46e5
+    style I fill:#3b82f6,color:#fff,stroke:#1d4ed8
 ```
 
 ### 2계층 구조
@@ -82,7 +84,7 @@ flowchart TD
 | `00-doc-architect` | PRD/ARCHITECTURE/ROADMAP 문서화 | "00-doc-architect 진행해" |
 | `00-team-architect` | 타겟 팀 동적 생성 + MCP 추천/재검증 | "00-team-architect 진행해" |
 | `00-security-enforcer` | 보안 룰 강제 주입 | "00-security-enforcer 진행해" |
-| `00-qa-gate` | 9개 항목 무결성 검증 | "00-qa-gate 진행해" |
+| `00-qa-gate` | 10개 항목 무결성 검증 | "00-qa-gate 진행해" |
 
 **Layer 1 — Target Team (`01-*~`)**
 실제 개발 수행. Builder 팀이 프로젝트별로 동적 생성.
@@ -120,9 +122,22 @@ Supabase MCP 설치 감지
 
 ---
 
-## 하네스 엔지니어링 3원칙
+## 하네스 엔지니어링 (Harness Engineering)
 
-이 시스템을 설계할 때 따른 핵심 원칙입니다.
+이 시스템은 야생마 같은 AI의 강력한 능력을 길들여서 안전하고 예측 가능한 경로로 유도하는 **'AI 제어 공학'**적 접근을 따릅니다.
+
+### 1. 결정론적 제약 (Deterministic Constraints)
+AI에게 "열심히 해"라고 부탁하는 대신, **"이 파일 외에는 건드리지 마"**, **"이 명령어는 절대 쓰지 마"**와 같이 명확한 물리적/논리적 한계를 설정합니다.
+
+### 2. 검증 루프 (Validation Loops)
+모든 산출물은 독립된 감시 에이전트(`00-qa-gate`)를 통해 체크리스트 기반으로 끊임없이 검증받습니다. 결함 발견 시 사람이 아닌 시스템에 의해 즉시 반려됩니다.
+
+### 3. 컨텍스트 격리 (Context Isolation)
+모든 정보를 한꺼번에 던져주지 않고, 단계별로 필요한 정보만 노출하는 **Progressive Disclosure** 기법을 통해 AI의 환각(Hallucination)을 원천 차단합니다.
+
+---
+
+## 하네스 엔지니어링 실무 원칙
 
 ### 1. HITL (Human-in-the-Loop)
 
