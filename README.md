@@ -1,8 +1,8 @@
 # Harness Builder Team
 
 > **AI가 AI 프로젝트 환경을 스스로 설정해주는 메타-에이전트 시스템**
-> 
-> "쇼핑몰 만들어줘" 한 마디로 → 전문가 에이전트 팀 자동 구성, MCP/Skills 추천, 보안 룰 주입, QA 검증까지 7단계 자동 완성
+>
+> "투투앱 만들어줘" 한 마디로 → 전문가 에이전트 팀 자동 구성, MCP/Skills 추천, 보안 룰 주입, QA 검증까지 7단계 자동 완성
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Harness Engineering](https://img.shields.io/badge/Harness-Engineering-blue)](./docs/GUIDELINES.md)
